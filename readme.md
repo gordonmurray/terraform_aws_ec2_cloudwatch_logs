@@ -2,6 +2,8 @@
 
 Creates everything from a VPC, subnets, route tables all the way up to an EC2 instance, with Apache webserver logs sent to Cloudwatch
 
+![log group in cloudwatch](files/cloudwatch_log_group.png)
+
 ### Cost estimate
 
 Powered by Infracost.

@@ -10,6 +10,6 @@ resource "aws_cloudwatch_log_subscription_filter" "subscription" {
   role_arn        = aws_iam_role.cloudwatch_firehose.arn
   log_group_name  = "access.log"
   filter_pattern  = ""
-  destination_arn = aws_kinesis_firehose_delivery_stream.rds_audit.arn
+  destination_arn = aws_kinesis_firehose_delivery_stream.webserver.arn
   distribution    = "Random"
 }

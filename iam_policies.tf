@@ -18,6 +18,7 @@ data "template_file" "firehose_service_role_policy" {
     bucket        = aws_s3_bucket.cloudwatch_logs_bucket.bucket
     firehose_name = "webserver-firehose"
     region        = data.aws_region.current.name
+    aws_account_id = var.aws_account_id
   }
 }
 

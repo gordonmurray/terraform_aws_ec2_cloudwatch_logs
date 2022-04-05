@@ -1,10 +1,17 @@
-# Use Terraform to create a webserver on AWS with logs sent to Cloudwatch
+# Use Terraform to create a webserver on AWS with logs sent to Cloudwatch and s3 for long term storage
 
-Creates everything from a VPC, subnets, route tables all the way up to an EC2 instance, with Apache webserver logs sent to Cloudwatch
+ Creates an EC2 webserver instance in a VPC with logs sent to Cloudwatch and to s3 for long term storage
+
+### Cloudwatch log group
 
 ![log group in cloudwatch](files/cloudwatch_log_group.png)
 
-### Cost estimate
+
+### Logs in s3
+
+![logs in S3](files/logs_s3.png)
+
+## Cost estimate
 
 Powered by Infracost.
 

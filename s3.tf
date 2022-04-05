@@ -32,11 +32,6 @@ resource "aws_s3_bucket" "cloudwatch_logs_bucket" {
 
     transition {
       days          = 30
-      storage_class = "STANDARD_IA"
-    }
-
-    transition {
-      days          = 60
       storage_class = "GLACIER"
     }
 

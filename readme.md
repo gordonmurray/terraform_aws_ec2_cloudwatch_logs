@@ -41,14 +41,6 @@ Project: gordonmurray/terraform_aws_ec2_cloudwatch_logs/.
  │  ├─ GET, SELECT, and all other requests            Monthly cost depends on usage: $0.0004 per 1k requests
  │  ├─ Select data scanned                            Monthly cost depends on usage: $0.002 per GB
  │  └─ Select data returned                           Monthly cost depends on usage: $0.0007 per GB
- ├─ Standard - infrequent access
- │  ├─ Storage                                        Monthly cost depends on usage: $0.0125 per GB
- │  ├─ PUT, COPY, POST, LIST requests                 Monthly cost depends on usage: $0.01 per 1k requests
- │  ├─ GET, SELECT, and all other requests            Monthly cost depends on usage: $0.001 per 1k requests
- │  ├─ Lifecycle transition                           Monthly cost depends on usage: $0.00 per 1k requests
- │  ├─ Retrievals                                     Monthly cost depends on usage: $0.01 per GB
- │  ├─ Select data scanned                            Monthly cost depends on usage: $0.002 per GB
- │  └─ Select data returned                           Monthly cost depends on usage: $0.01 per GB
  └─ Glacier flexible retrieval
     ├─ Storage                                        Monthly cost depends on usage: $0.0036 per GB
     ├─ PUT, COPY, POST, LIST requests                 Monthly cost depends on usage: $0.033 per 1k requests

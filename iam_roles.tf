@@ -43,28 +43,7 @@ resource "aws_iam_role" "cloudwatch_firehose" {
           Principal = {
             Service = "s3.amazonaws.com"
           }
-        },
-        {
-          Action = "sts:AssumeRole"
-          Effect = "Allow"
-          Principal = {
-            Service = "logs.eu-west-1.amazonaws.com"
-          }
-        },
-        {
-          Action = "sts:AssumeRole"
-          Effect = "Allow"
-          Principal = {
-            Service = "logs.ap-southeast-2.amazonaws.com"
-          }
-        },
-        {
-          Action = "sts:AssumeRole"
-          Effect = "Allow"
-          Principal = {
-            Service = "logs.us-east-1.amazonaws.com"
-          }
-        },
+        }
       ]
       Version = "2012-10-17"
     }

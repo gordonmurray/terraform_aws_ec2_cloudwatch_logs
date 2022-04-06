@@ -1,6 +1,29 @@
 # Use Terraform to create a webserver on AWS with logs sent to Cloudwatch and s3 for long term storage
 
- Creates an EC2 webserver instance in a VPC with logs sent to Cloudwatch and to s3 for long term storage
+In this project Terraform creates an EC2 instance with Apache webserver installed, running in a VPC. The AWS Cloudwatch agent is installed on the webserver and configured to send the Apache access logs to Cloudwatch.
+
+A Subscription is added to the Cloudwatch log group to send the logs to a Kinesis steam and on to S3 for long term storage.
+
+The log group retention is set to 3 days to keep costs low and a lifecycle is added to the S3 bucket to change the logs to Glacier storage type after 30 days to keep costs low.
+
+## Installation
+
+First, create an AMI using Packer:
+
+Update the file located at packer/variables.json to suit your current VPC, the run the following commands:
+
+```
+cd packer
+packer validate -var-file=variables.json webserver.json
+packer build -var-file=variables.json webserver.json
+```
+
+Once your AMI is built, use Terraform to create a VPC wth your webserver:
+
+```
+terraform init
+terraform apply
+```
 
 ### Cloudwatch log group
 

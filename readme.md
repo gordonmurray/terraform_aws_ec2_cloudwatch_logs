@@ -4,7 +4,7 @@ In this project Terraform creates an EC2 instance with Apache webserver installe
 
 A Subscription is added to the Cloudwatch log group to send the logs to a Kinesis steam and on to S3 for long term storage.
 
-The log group retention is set to 3 days to keep costs low and a lifecycle is added to the S3 bucket to change the logs to Glacier storage type after 30 days to keep costs low.
+The log group retention is set to 3 days to keep costs low and a lifecycle is added to the S3 bucket to change the logs to Glacier storage type after 14 days to keep costs low.
 
 ## Installation
 
@@ -35,8 +35,6 @@ terraform apply
 ![logs in S3](files/logs_s3.png)
 
 ## Cost estimate
-
-Powered by Infracost.
 
 ```
 Project: gordonmurray/terraform_aws_ec2_cloudwatch_logs/.
@@ -85,5 +83,20 @@ Project: gordonmurray/terraform_aws_ec2_cloudwatch_logs/.
 ──────────────────────────────────
 26 cloud resources were detected:
 ∙ 4 were estimated, all of which include usage-based costs, see https://infracost.io/usage-file
-∙ 22 were free, rerun with --show-skipped to see details
+∙ 22 were free:
+  ∙ 3 x aws_iam_role
+  ∙ 3 x aws_security_group_rule
+  ∙ 3 x aws_subnet
+  ∙ 2 x aws_route_table_association
+  ∙ 1 x aws_cloudwatch_log_subscription_filter
+  ∙ 1 x aws_iam_instance_profile
+  ∙ 1 x aws_iam_policy
+  ∙ 1 x aws_iam_role_policy
+  ∙ 1 x aws_internet_gateway
+  ∙ 1 x aws_key_pair
+  ∙ 1 x aws_route
+  ∙ 1 x aws_route_table
+  ∙ 1 x aws_s3_bucket_public_access_block
+  ∙ 1 x aws_security_group
+  ∙ 1 x aws_vpc
 ```

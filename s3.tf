@@ -31,7 +31,7 @@ resource "aws_s3_bucket" "cloudwatch_logs_bucket" {
     tags                                   = {}
 
     transition {
-      days          = 30
+      days          = 14
       storage_class = "GLACIER"
     }
 

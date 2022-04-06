@@ -28,13 +28,13 @@ terraform apply
 The output will show the public DNS of your new webserver.
 
 ```mermaid
-Flowchat TD
-   A[EC2 instance];
-   B--Cloudwatch Agent--> C[Cloudwatch logs];
-   D--Subsciption--> E[Kinesis stream];
-   F[S3 bucket];
+graph TD;
+    A[EC2 instance];
+    A--Cloudwatch agent-->B[Cloudwatch Logs];
+    B--Subscription-->C[Kinesis Stream];
+    C-->D[S3];
+    D--Glacier lifecycle-->D;
 ```
-
 
 ### Cloudwatch log group
 

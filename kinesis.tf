@@ -6,7 +6,7 @@ resource "aws_kinesis_firehose_delivery_stream" "webserver" {
   extended_s3_configuration {
     bucket_arn          = aws_s3_bucket.cloudwatch_logs_bucket.arn
     buffer_interval     = 300
-    buffer_size         = 128
+    buffer_size         = 5
     compression_format  = "UNCOMPRESSED"
     error_output_prefix = "errors/"
     prefix              = ""

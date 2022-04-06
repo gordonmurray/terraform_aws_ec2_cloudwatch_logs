@@ -28,7 +28,7 @@ terraform apply
 The output will show the public DNS of your new webserver.
 
 ```mermaid
-Flowchat TD;
+Flowchat TD
    A[EC2 instance];
    B--Cloudwatch Agent--> C[Cloudwatch logs];
    D--Subsciption--> E[Kinesis stream];
